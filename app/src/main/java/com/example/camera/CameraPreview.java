@@ -157,7 +157,7 @@ public class CameraPreview extends Activity implements OnClickListener{
 
 				// Start the preview
 				//mCamera.startPreview();
-				mPreview.measureBPM();
+				int BPM = mPreview.measureBPM();
 
 
 			} 
