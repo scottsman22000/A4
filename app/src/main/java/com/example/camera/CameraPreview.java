@@ -605,7 +605,7 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback, PreviewCallba
 		else if (mArray[1] == 0) {
 			mArray[1] = mean;
 		}
-		else if(mArray[0] > mArray[1] && mArray[1] < mean){
+		else if(mArray[0] < mArray[1] && mArray[1] > mean){
 			isPeak = true;
 
 			mArray[0] = mArray[1];
