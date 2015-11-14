@@ -591,9 +591,6 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback, PreviewCallba
 
 		sum=0;
 
-		//cube to definitely see if past the threshold
-		mean = Math.pow(mean,3);
-
 		/*
 			Find the peak by keeping a small dynamic array of size 2,
 			compare the 0th index to the 1st index and the mean to the
@@ -617,10 +614,9 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback, PreviewCallba
 		}
 
 		if(isPeak) {
+
 			//add the peak to the peak queue
-			if (mean < threshold) {
-				peakQueue.add(currentTime);
-			}//end enqueue if
+			peakQueue.add(currentTime);
 
 			//check to see if it has been over 15 seconds, if so,
 			//remove the old data
@@ -632,7 +628,6 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback, PreviewCallba
 
 			result = peakQueue.size() * 4;
 
-			isPeak = false;
 		}//end isPeak if
 
 
